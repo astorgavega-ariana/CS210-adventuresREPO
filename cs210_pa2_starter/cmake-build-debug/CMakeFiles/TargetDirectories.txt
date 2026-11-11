@@ -1,0 +1,3 @@
+/Users/ariana.av/Downloads/cs210_pa2_starter/cmake-build-debug/CMakeFiles/adventure.dir
+/Users/ariana.av/Downloads/cs210_pa2_starter/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/ariana.av/Downloads/cs210_pa2_starter/cmake-build-debug/CMakeFiles/rebuild_cache.dir

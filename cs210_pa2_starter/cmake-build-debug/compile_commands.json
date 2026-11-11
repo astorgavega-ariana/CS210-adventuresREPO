@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/Users/ariana.av/Downloads/cs210_pa2_starter/cmake-build-debug",
+  "command": "/usr/bin/c++ -g -std=gnu++20 -arch arm64 -fcolor-diagnostics -o CMakeFiles/adventure.dir/main.cpp.o -c /Users/ariana.av/Downloads/cs210_pa2_starter/main.cpp",
+  "file": "/Users/ariana.av/Downloads/cs210_pa2_starter/main.cpp",
+  "output": "/Users/ariana.av/Downloads/cs210_pa2_starter/cmake-build-debug/CMakeFiles/adventure.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/ariana.av/Downloads/cs210_pa2_starter/cmake-build-debug",
+  "command": "/usr/bin/c++ -g -std=gnu++20 -arch arm64 -fcolor-diagnostics -o CMakeFiles/adventure.dir/Adventure.cpp.o -c /Users/ariana.av/Downloads/cs210_pa2_starter/Adventure.cpp",
+  "file": "/Users/ariana.av/Downloads/cs210_pa2_starter/Adventure.cpp",
+  "output": "/Users/ariana.av/Downloads/cs210_pa2_starter/cmake-build-debug/CMakeFiles/adventure.dir/Adventure.cpp.o"
+}
+]
