@@ -20,7 +20,7 @@ private:
         }
         int total = 1;
         for (int i = 0; i < scene->getNumChoices(); i++) {
-            total += countScenes(scene->getChoices()[i]);
+            total += countScenes(scene->getChoice(i));
         }
         return total;
     }
@@ -35,7 +35,7 @@ private:
         }
         int total = 0;
         for (int i=0; i < scene->getNumChoices(); i++) {
-            total += countEndings(scene->getChoices()[i]);
+            total += countEndings(scene->getChoice(i));
         }
         return total;
     }
@@ -52,7 +52,7 @@ private:
         }
         int tallestChild = -1;
         for (int i = 0; i<scene->getNumChoices(); i++) {
-            int childHeight = height(scene->getChoices(i));
+            int childHeight = height(scene->getChoice(i));
                 if (childHeight > tallestChild) {
                     tallestChild = childHeight;
                 }
