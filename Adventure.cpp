@@ -179,6 +179,49 @@ int Adventure::askChoice(int numChoices) {
 // and then print the bag.
 // The bag is a List<Item>. Start with HP = startHp_ and loot = 0.
 void Adventure::play() {
+    int hp = startHp_;
+    int loot = 0;
+    List<Item> bag;
+    Scene<Moment>* current = tree_.getRoot();
+    while (current != nullptr) {
+        Moment* moment = current->getData();
+        hp+=moment->getHpChange();
+        loot+=moment->getLoot();
+        std::cout <<std::string(40,'-')<<std::endl;
+        std::cout<<moment->getText()<<std::endl;
+        if (moment->hasItem()) {
+            Item item(moment->getItem());
+            if (bag.search(item)) {
+                std::cout<<"You already have: "<< moment->getItem()<<std::endl;
+
+            }else {
+                bag.addFront(new Item(moment->getItem()));
+                std::cout<<"You picked up: "<< moment->getItem()<<std::endl;
+            }
+        }
+        std::cout <<"HP: "<< hp<< " Loot: "<< loot<<std::endl;
+        if (hp <= 0) {
+            std::cout<<"Your Hp hit 0. GAME OVER."<<std::endl;
+            break;
+        }
+        if (current->isEnding()) {
+            std::cout<<"THE END."<<std::endl;
+            break;
+        }
+        for (int i = 0; i < current->getNumChoices(); i++) {
+            Scene<Moment>* choice = current->getChoice(i);
+            std::cout <<"["<< i + 1 << "] " <<choice->getData()->getLabel()<<std::endl;
+
+        }
+        int selected = askChoice(current->getNumChoices());
+        if (selected == 0) {
+            break;
+        }
+        current = current->getChoice(selected - 1);
+    }
+    std::cout<<"Final HP: "<<" Final loot: "<< loot<<std::endl;
+    std::cout<<"Inventory ("<<bag.size()<< " items):"<<std::endl;
+    bag.print();
 }
 
 // ===================== ANALYZING =====================
