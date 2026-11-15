@@ -9,7 +9,7 @@ int main(int argc, char* argv[]) {
     // argv holds those words.
     //  argv[0] is "./adventure"    argv[1] is "bee_movie.txt"
     if (argc != 2) {
-        std::cout << "Usage: ./adventure <bee_movie.txt>" << std::endl;
+        std::cout << "Usage: ./adventure <my_story.txt" << std::endl;
         return 1;
     }
 
