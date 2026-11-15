@@ -18,16 +18,16 @@ int main(int argc, char* argv[]) {
     // Run this first so you know your file is being found.
     // When you start PART 1, comment out this whole block.
 
-    std::ifstream file(argv[1]);
-    if (!file.is_open()) {
-        std::cout << "Error: could not open file " << argv[1] << std::endl;
-        return 1;
-    }
-    std::string line;
-    while (std::getline(file, line)) {
-        std::cout << line << std::endl;
-    }
-    file.close();
+    // std::ifstream file(argv[1]);
+    // if (!file.is_open()) {
+    //     std::cout << "Error: could not open file " << argv[1] << std::endl;
+    //     return 1;
+    // }
+    // std::string line;
+    // while (std::getline(file, line)) {
+    //     std::cout << line << std::endl;
+    // }
+    // file.close();
 
     // ===================== PART 1: the game =====================
     // Uncomment this block once your Scene, StoryTree, and Adventure compile.
