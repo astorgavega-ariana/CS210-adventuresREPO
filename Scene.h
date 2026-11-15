@@ -38,7 +38,7 @@ public:
             delete choices_[i];
         }
         delete[] choices_;
-        delete[] data_;
+        delete data_;
     }
 
     T* getData() const {
