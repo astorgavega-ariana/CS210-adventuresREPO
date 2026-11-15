@@ -249,6 +249,16 @@ void Adventure::printSpoilers() const {
 // If the very first scene is an ending, print "Path (start): <scene text>".
 // Endings print in order: choice 1 before choice 2 before choice 3.
 void Adventure::printEndings(Scene<Moment>* scene, const std::string& path) const {
+    if (scene == nullptr) {
+        return;
+    }
+    if (scene->isEnding()) {
+        std::cout<<"Path "<<(path.empty() ? "(start)" : path)<<": "<<scene->getData()->getText()<<std::endl;
+    return;
+    }
+    for (int i =0; i < scene->getNumChoices(); i++) {
+        printEndings(scene->getChoice(i),extendPath(path, i + 1));
+    }
 }
 
 // TODO 17: the greedy advisor.
