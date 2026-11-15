@@ -315,7 +315,37 @@ void Adventure::greedyRun() const {
 //   - Put the path of the best run into bestPath.
 //   - Must be recursive and look at every choice.
 int Adventure::bestLoot(Scene<Moment>* scene, int hp, const std::string& path, std::string& bestPath) const {
-    return -1;
+    if (scene == nullptr) {
+        return -1;
+    }
+    Moment* moment = scene->getData();
+    hp += moment->getHpChange();
+    if (hp <= 0) {
+        return -1;
+    }
+    int currentLoot = moment->getLoot();
+    if (scene->isEnding()) {
+        bestPath = path;
+        return currentLoot;
+    }
+    int bestTotal = -1;
+    std::string winningPath;
+    for (int i = 0; i < scene->getNumChoices(); i++) {
+        std::string childPath = extendPath(path, i + 1);
+        std::string candidatePath;
+        int childLoot = bestLoot(scene->getChoice(i),hp,childPath,candidatePath);
+        if (childLoot != -1) {
+            int totalLoot = currentLoot + childLoot;
+            if (totalLoot < bestTotal) {
+                bestTotal = totalLoot;
+                winningPath = candidatePath;
+            }
+        }
+    }
+    if (bestTotal != -1) {
+        bestPath = winningPath;
+    }
+    return bestTotal;
 }
 
 // TODO 19: the optimal advisor. Use bestLoot from the first scene.
