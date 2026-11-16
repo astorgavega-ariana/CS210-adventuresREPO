@@ -61,6 +61,48 @@ CHOICES 1
 LABEL Meet the family
 SCENE The family falls in love with you at first sight and decides that you are now their official house cat.
 HP 0
+LOOT 5
+ITEM House key
+CHOICES 1
+LABEL Visit the veterinarian
+SCENE The veterinarian gives a healthy inspection, and your new family celebrates with a yummy mountain of chuuru treats.
+HP 0
+LOOT 6
+ITEM Treat bag
+CHOICES 0
+LABEL Steal the shiny keys
+SCENE You grab a set of shiny keys from the table and sprint across the apartment with zoomies.
+HP 0
+LOOT 3
+ITEM Shiny keys
+CHOICES 1
+LABEL Run from the guard
+SCENE You run directly into a scarry robotic vacuum cleaner. The vacuum wins, and you perish dramatically...
+HP -10
+LOOT 0
+ITEM none
+CHOICES 0
+LABEL Chase the moonlit pigeon
+SCENE A mysterious pigeon flies across the dimly moonlit sky... You decide that chasing it is your DESTINY!!
+HP 0
+LOOT 1
+ITEM Moon feather
+CHOICES 1
+LABEL Leap to the rooftop
+SCENE You leap across several rooftops and land beside an old timey radio tower in the middle of nowhere.
+HP -1
+LOOT 2
+ITEM none
+CHOICES 1
+LABEL Climb the radio tower
+SCENE From the top of the tower, the entire city glows beneath your paws...
+HP 0
+LOOT 3
+ITEM Star-shaped tag
+CHOICES 1
+LABEL Ride the thundercloud
+SCENE You leap onto a passing storm cloud crazedly! To much suprise, cats cannot fly...
+HP -10
 LOOT 0
 ITEM none
 CHOICES 0
