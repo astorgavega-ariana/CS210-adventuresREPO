@@ -59,12 +59,27 @@ Time complexity of O(n) with mostly just printing and searching.
 
 2. Why does each scene allocate exactly numChoices slots instead of declaring Scene<T>*
    choices[3]? What does an ending hold in choices_, and why?
+- Inside the scene function under the if-statment, choices_ = new Scene<T>* uses numChoices_ as an array to ensure every scene only spits back out the exact number of choices avalaibke
+to both avoid wasting memory and flexbility with the choices. Like if a scene only has 2 choices it will only allocate 2 choices vrs if we had choices[3] that would ALWAYS have 3 choices to scene even if there are really one 2 avaliable choices
+whereas using i does the choices based on the index and allowing function to not have to actually search for it. For an ending scene which would have zero choices meaning choices_ would have nulllptr pointers (point to nullptr)!
 3. Walk through your Scene destructor. What gets deleted, and in what order? What would
    go wrong if choices_ were deleted first?
+- My scene destructor starts with a for loop to run through and delete every child scene and delete the child of those child's (if exist), ending with an empty tree at the end before deleting the array of choices_(so the childp pointers)
+before deleting the scene's stored data since deleting a node doesnt actually delete within memory unless done so manually which delete data_ does. If choices_ were deleted first the pointers would be deleted before the function could delete the child scenes and loosing them and their data into the void of c++?
+But deleting it this way would also loose the data inside these lost child nodes.
 4. Show the path greedy took and the path optimal took on your story, with the loot for each.
    Explain why greedy lost. If greedy did not lose, change your story until it does, and explain
    what you changed.
+- the greedy path for my cat simulator story was 1-2-1 (exploring the alley (1 loot), searching the dumpster (3 loot), and boss fight(7 loot)) with loot of 11 and has an ending of a boss battle (which is lost) to an alley cat.
+In comparison, the optimal run has a path of 1-1-1-1-1 (exploring the alley(1 loot), sneaking into the bakery(loot 2), climbing the fire escape(loot 4), having the cat contest(loot 4), and fluff ending (loot 8)) loot 17 and one of the good endings
+Greedy looses pretty quickly in comparison because 1, after heading for the dumpster despite the more loot it gains in comparison to bakery, choices limit and end up with with a quicker play through vrs the bakery (smaller loot) but opening more doors and longer play through
+for more loot!
 5. bestLoot tries every path, yet it runs in O(n) time. Explain why it is not exponential, using
    what you know about paths and leaves in a tree.
+- I think it isnt exponential because it only visits the scene once and entire path once to try and find the bestLoot within all paths. Also because it is using one for loop making it sequential but within paths and 
+and leaves, I would argue saying the function has to simply go through each path once with each recusive call using one scene and moving through all again and again using O(n) instead of exponential since its only going one by one.
 6. Which List methods does your game use, and why? What does one search cost as the bag
    grows?
+- My story uses List for search, addFront,size, print, isEmpty, and deleteFront. For search, to check whether user the cat already has an item, addfront to add a new item into the inventory, size for grabbing the size of items in inventory at the end of a path, print
+to print out every item the user the cat has, isEmpty and deleteFront at the end of the game to make sure inventory is cleared out! 
+I think one search uses a time compelxity of O(n) since it can go one by one through each item searching but adding an item would be O(1) since it is adding to the list specifically to the front.

@@ -359,5 +359,4 @@ void Adventure::optimalRun() const {
     std::cout<<" Path: "<<bestPath<<std::endl;
     std::cout<<"Loot: "<<loot<<std::endl;
     std::cout<<" Result: reached an ending"<<std::endl;
-
 }
