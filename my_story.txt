@@ -1,5 +1,65 @@
-START_HP 10
-SCENE Replace this file with your own story.
+START_HP 8
+SCENE You wake up as a stray cat in the middle of a busy city. What kind of cat life will you choose?
+HP 0
+LOOT 0
+ITEM none
+CHOICES 3
+LABEL Explore the alleys
+SCENE You slip into the alleyways and discover that every cat in the neighborhood has heard of you...
+HP 0
+LOOT 1
+ITEM Blue collar
+CHOICES 2
+LABEL Sneak into the bakery
+SCENE You sneak into a bakery and find an entire tray of warm fish-shaped treats!!
+HP 1
+LOOT 2
+ITEM Fish treat
+CHOICES 1
+LABEL Climb the fire escape
+SCENE You climb the fire escape and reach an elite penthouse rooftop in the neighborhood!
+HP 0
+LOOT 2
+ITEM none
+CHOICES 1
+LABEL Enter the cat contest
+SCENE A fancy cat contest is being held on the rooftop. The judges are impressed by your confidence...
+HP 0
+LOOT 4
+ITEM Golden bell
+CHOICES 1
+LABEL Show your fluff
+SCENE You display your finest moves and cute eyes and win the grand prize. You become the most pampered cat in the city.
+HP 0
+LOOT 8
+ITEM Trophy
+CHOICES 0
+LABEL Search the dumpster
+SCENE You discovered a hidden dumpster filled with suprisingly delicious leftovers and shiny objects...
+HP 1
+LOOT 3
+ITEM Silver spoon
+CHOICES 1
+LABEL Challenge the alley boss
+SCENE You challenge the GIANT alley cat for control of the neighborhood and win after a dramatic hiss and intimidating howl.
+HP -1
+LOOT 7
+ITEM none
+CHOICES 0
+LABEL Visit the apartment
+SCENE You climb and manage to slip into an open window and enter a warm apartment filled with comfortable furniture.
+HP 1
+LOOT 1
+ITEM Red ribbon
+CHOICES 2
+LABEL Nap on the doormat
+SCENE You try to curl up on the cozy doormat and pretend to be harmless while the family watches you.
+HP 0
+LOOT 1
+ITEM none
+CHOICES 1
+LABEL Meet the family
+SCENE The family falls in love with you at first sight and decides that you are now their official house cat.
 HP 0
 LOOT 0
 ITEM none
